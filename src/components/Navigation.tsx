@@ -27,8 +27,8 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold text-blue-900">Tuma Ride</h1>
-            <Badge variant="outline" className="text-xs">
+            <h1 className="text-2xl font-bold text-green-800">Tuma Ride</h1>
+            <Badge variant="outline" className="text-xs border-green-600 text-green-600">
               Kila Safari Ina Thamani
             </Badge>
           </Link>
@@ -39,8 +39,8 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-gray-600 hover:text-blue-600 transition-colors ${
-                  location.pathname === item.path ? "text-blue-600 font-medium" : ""
+                className={`text-gray-600 hover:text-green-600 transition-colors ${
+                  location.pathname === item.path ? "text-green-600 font-medium" : ""
                 }`}
               >
                 {item.name}
@@ -54,7 +54,7 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
               variant="outline"
               size="sm"
               onClick={onSenderClick}
-              className="border-blue-600 text-blue-600 hover:bg-blue-50"
+              className="border-green-600 text-green-600 hover:bg-green-50"
             >
               <Package className="mr-2 h-4 w-4" />
               Send Package
@@ -86,8 +86,8 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`text-gray-600 hover:text-blue-600 transition-colors ${
-                    location.pathname === item.path ? "text-blue-600 font-medium" : ""
+                  className={`text-gray-600 hover:text-green-600 transition-colors ${
+                    location.pathname === item.path ? "text-green-600 font-medium" : ""
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -102,7 +102,7 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
                     onSenderClick?.();
                     setIsMenuOpen(false);
                   }}
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                  className="border-green-600 text-green-600 hover:bg-green-50"
                 >
                   <Package className="mr-2 h-4 w-4" />
                   Send Package
