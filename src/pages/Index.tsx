@@ -3,15 +3,18 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Package, Clock, Star } from "lucide-react";
+import { Users, Package, Clock, Star, Shield, MapPin, CreditCard, Smartphone } from "lucide-react";
+import { Navigation } from "@/components/Navigation";
 import { DeliveryRequest } from "@/components/DeliveryRequest";
 import { SetRoute } from "@/components/SetRoute";
 import { UserDashboard } from "@/components/UserDashboard";
+import { PackageTracking } from "@/components/PackageTracking";
 
 const Index = () => {
   const [userType, setUserType] = useState<'none' | 'sender' | 'mover'>('none');
   const [showDeliveryForm, setShowDeliveryForm] = useState(false);
   const [showRouteForm, setShowRouteForm] = useState(false);
+  const [showTracking, setShowTracking] = useState(false);
 
   const resetView = () => {
     setUserType('none');
@@ -19,9 +22,37 @@ const Index = () => {
     setShowRouteForm(false);
   };
 
+  const testimonials = [
+    {
+      name: "Grace Wanjiku",
+      role: "University Student",
+      location: "Nairobi",
+      rating: 5,
+      comment: "I earn KES 1,500 every weekend when I travel home to Nyeri. It covers my transport costs and gives me extra pocket money!",
+      avatar: "GW"
+    },
+    {
+      name: "David Kiprotich",
+      role: "Business Owner",
+      location: "Eldoret",
+      rating: 5,
+      comment: "Sent urgent documents to Nairobi and they arrived the same day. Much faster and cheaper than courier services!",
+      avatar: "DK"
+    },
+    {
+      name: "Mary Achieng",
+      role: "Matatu Driver",
+      location: "Kisumu",
+      rating: 5,
+      comment: "I've been using Tuma Ride for 3 months. It's added KES 800-1,200 to my daily earnings without extra effort.",
+      avatar: "MA"
+    }
+  ];
+
   if (userType !== 'none') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
+        <Navigation onSenderClick={() => setUserType('sender')} onMoverClick={() => setUserType('mover')} />
         <div className="container mx-auto px-4 py-8">
           <div className="flex justify-between items-center mb-8">
             <div className="flex items-center gap-4">
@@ -30,9 +61,15 @@ const Index = () => {
                 Kila Safari Ina Thamani
               </Badge>
             </div>
-            <Button variant="outline" onClick={resetView}>
-              Back to Home
-            </Button>
+            <div className="flex gap-2">
+              <Button variant="outline" onClick={() => setShowTracking(true)}>
+                <MapPin className="mr-2 h-4 w-4" />
+                Track Package
+              </Button>
+              <Button variant="outline" onClick={resetView}>
+                Back to Home
+              </Button>
+            </div>
           </div>
           
           <UserDashboard 
@@ -48,6 +85,10 @@ const Index = () => {
           {showRouteForm && (
             <SetRoute onClose={() => setShowRouteForm(false)} />
           )}
+
+          {showTracking && (
+            <PackageTracking onClose={() => setShowTracking(false)} />
+          )}
         </div>
       </div>
     );
@@ -55,6 +96,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
+      <Navigation onSenderClick={() => setUserType('sender')} onMoverClick={() => setUserType('mover')} />
+      
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
@@ -71,7 +114,7 @@ const Index = () => {
             Connect with travelers going your way. Send packages, earn money, build community.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button 
               size="lg"
               className="bg-blue-600 hover:bg-blue-700"
@@ -89,6 +132,82 @@ const Index = () => {
               <Users className="mr-2 h-5 w-5" />
               I'm Traveling & Can Help
             </Button>
+          </div>
+
+          <Button 
+            variant="outline" 
+            onClick={() => setShowTracking(true)}
+            className="border-purple-600 text-purple-600 hover:bg-purple-50"
+          >
+            <MapPin className="mr-2 h-5 w-5" />
+            Track Your Package
+          </Button>
+        </div>
+
+        {/* Trust Features */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+            Why Trust Tuma Ride?
+          </h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="font-semibold mb-2">100% Verified Users</h3>
+                <p className="text-sm text-gray-600">All users verified with national ID and photo confirmation</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <MapPin className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                <h3 className="font-semibold mb-2">Real-Time Tracking</h3>
+                <p className="text-sm text-gray-600">Track your package location live, just like Uber or Bolt</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <CreditCard className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+                <h3 className="font-semibold mb-2">Secure Payments</h3>
+                <p className="text-sm text-gray-600">M-Pesa integration with instant, secure transactions</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <Star className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
+                <h3 className="font-semibold mb-2">Ratings & Reviews</h3>
+                <p className="text-sm text-gray-600">Transparent feedback system for quality assurance</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Testimonials */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+            What Our Users Say
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="border-l-4 border-l-blue-500">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
+                      {testimonial.avatar}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-600">{testimonial.role} • {testimonial.location}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 italic">"{testimonial.comment}"</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 
@@ -216,6 +335,18 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      {showDeliveryForm && (
+        <DeliveryRequest onClose={() => setShowDeliveryForm(false)} />
+      )}
+      
+      {showRouteForm && (
+        <SetRoute onClose={() => setShowRouteForm(false)} />
+      )}
+
+      {showTracking && (
+        <PackageTracking onClose={() => setShowTracking(false)} />
+      )}
     </div>
   );
 };
