@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Menu, X, Package, Users } from "lucide-react";
+import { Menu, X, Package, Users, LogIn, UserPlus } from "lucide-react";
 
 interface NavigationProps {
   onSenderClick?: () => void;
@@ -53,6 +53,22 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
             <Button
               variant="outline"
               size="sm"
+              className="border-green-600 text-green-600 hover:bg-green-50"
+            >
+              <LogIn className="mr-2 h-4 w-4" />
+              Sign In
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-green-600 text-green-600 hover:bg-green-50"
+            >
+              <UserPlus className="mr-2 h-4 w-4" />
+              Sign Up
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
               onClick={onSenderClick}
               className="border-green-600 text-green-600 hover:bg-green-50"
             >
@@ -95,6 +111,24 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
                 </Link>
               ))}
               <div className="flex flex-col gap-2 pt-3">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-green-600 text-green-600 hover:bg-green-50"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <LogIn className="mr-2 h-4 w-4" />
+                  Sign In
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-green-600 text-green-600 hover:bg-green-50"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <UserPlus className="mr-2 h-4 w-4" />
+                  Sign Up
+                </Button>
                 <Button
                   variant="outline"
                   size="sm"
