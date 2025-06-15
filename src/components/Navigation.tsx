@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, LogIn, UserPlus } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 
 interface NavigationProps {
   onSenderClick?: () => void;
@@ -44,23 +44,18 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
             ))}
           </div>
 
-          {/* Action Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-green-600 text-green-600 hover:bg-green-50"
-            >
-              <LogIn className="mr-2 h-4 w-4" />
-              Sign In
-            </Button>
-            <Button
-              size="sm"
-              className="bg-green-600 hover:bg-green-700"
-            >
-              <UserPlus className="mr-2 h-4 w-4" />
-              Sign Up
-            </Button>
+          {/* Action Button */}
+          <div className="hidden md:flex items-center">
+            <Link to="/auth">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-green-600 text-green-600 hover:bg-green-50"
+              >
+                <LogIn className="mr-2 h-4 w-4" />
+                Sign In
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -88,24 +83,18 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
                   {item.name}
                 </Link>
               ))}
-              <div className="flex flex-col gap-2 pt-3">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-green-600 text-green-600 hover:bg-green-50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <LogIn className="mr-2 h-4 w-4" />
-                  Sign In
-                </Button>
-                <Button
-                  size="sm"
-                  className="bg-green-600 hover:bg-green-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <UserPlus className="mr-2 h-4 w-4" />
-                  Sign Up
-                </Button>
+              <div className="pt-3">
+                <Link to="/auth">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-green-600 text-green-600 hover:bg-green-50 w-full"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <LogIn className="mr-2 h-4 w-4" />
+                    Sign In
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
