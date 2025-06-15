@@ -51,11 +51,11 @@ export const Hero = ({ onSenderClick, onMoverClick, onTrackingClick }: HeroProps
               <div 
                 className="relative min-h-[90vh] bg-cover bg-center bg-no-repeat"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(34, 197, 94, 0.8), rgba(22, 163, 74, 0.8)), url('${slide.image}')`
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${slide.image}')`
                 }}
               >
                 <div className="container mx-auto px-4 py-16 relative z-10 h-full flex items-center">
-                  <div className="text-center text-white w-full">
+                  <div className="text-center text-green-700 w-full">
                     <h1 className="text-5xl font-bold mb-4">
                       Tuma Ride
                     </h1>
@@ -84,8 +84,8 @@ export const Hero = ({ onSenderClick, onMoverClick, onTrackingClick }: HeroProps
                       </Button>
                       <Button 
                         size="lg"
-                        variant="outline"
-                        className="border-2 border-white text-white hover:bg-white hover:text-green-700 font-semibold shadow-lg"
+                        
+                        className="bg-white text-green-700 hover:bg-green-50 font-semibold shadow-lg"
                         onClick={onMoverClick}
                       >
                         <Users className="mr-2 h-5 w-5" />
@@ -94,9 +94,9 @@ export const Hero = ({ onSenderClick, onMoverClick, onTrackingClick }: HeroProps
                     </div>
 
                     <Button 
-                      variant="outline" 
+                      size="lg"
                       onClick={onTrackingClick}
-                      className="border-2 border-white text-white hover:bg-white hover:text-green-700 font-semibold shadow-lg"
+                      className="bg-white text-green-700 hover:bg-green-50 font-semibold shadow-lg"
                     >
                       <MapPin className="mr-2 h-5 w-5" />
                       Track Your Package
