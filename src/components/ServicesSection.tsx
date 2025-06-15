@@ -7,8 +7,9 @@ export const ServicesSection = () => (
       <div className="bg-white rounded-xl shadow-lg flex flex-col items-center p-8">
         <Package className="w-12 h-12 text-green-600 mb-3" />
         <h3 className="font-bold text-lg mb-2">Parcel Delivery</h3>
-        <img src="https://images.pexels.com/photos/616966/pexels-photo-616966.jpeg" alt="parcel delivery" className="h-32 w-full object-cover rounded mb-4" />
+        <img src="parcel_delivery.png" alt="parcel delivery" className="h-32 w-full object-cover rounded mb-4" />
         <p className="text-gray-600">Send packages to any destination in Kenya securely and quickly.</p>
+        
       </div>
       <div className="bg-white rounded-xl shadow-lg flex flex-col items-center p-8">
         <Users className="w-12 h-12 text-green-600 mb-3" />
@@ -19,7 +20,7 @@ export const ServicesSection = () => (
       <div className="bg-white rounded-xl shadow-lg flex flex-col items-center p-8">
         <MapPin className="w-12 h-12 text-green-600 mb-3" />
         <h3 className="font-bold text-lg mb-2">Real-Time Tracking</h3>
-        <img src="https://images.pexels.com/photos/184634/pexels-photo-184634.jpeg" alt="tracking" className="h-32 w-full object-cover rounded mb-4" />
+        <img src="real.jpg" alt="tracking" className="h-32 w-full object-cover rounded mb-4" />
         <p className="text-gray-600">Track your package with live updates from pickup to delivery.</p>
       </div>
     </div>

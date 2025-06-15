@@ -1,6 +1,6 @@
 
 export const Hero = () => (
-  <section className="relative h-[70vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('https://images.pexels.com/photos/616966/pexels-photo-616966.jpeg')" }}>
+  <section className="relative h-[70vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('hero2.jpg')" }}>
     <div className="absolute inset-0 bg-black/50" />
     <div className="relative z-10 text-center text-white flex flex-col items-center justify-center h-full w-full">
       <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Kenya's Trusted Logistics Network</h1>
