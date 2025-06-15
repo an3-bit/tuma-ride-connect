@@ -2,8 +2,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Menu, X, Package, Users, LogIn, UserPlus } from "lucide-react";
+import { Menu, X, LogIn, UserPlus } from "lucide-react";
 
 interface NavigationProps {
   onSenderClick?: () => void;
@@ -28,9 +27,6 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <h1 className="text-2xl font-bold text-green-800">Tuma Ride</h1>
-            <Badge variant="outline" className="text-xs border-green-600 text-green-600">
-              Kila Safari Ina Thamani
-            </Badge>
           </Link>
 
           {/* Desktop Navigation */}
@@ -59,29 +55,11 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
               Sign In
             </Button>
             <Button
-              variant="outline"
               size="sm"
-              className="border-green-600 text-green-600 hover:bg-green-50"
+              className="bg-green-600 hover:bg-green-700"
             >
               <UserPlus className="mr-2 h-4 w-4" />
               Sign Up
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={onSenderClick}
-              className="border-green-600 text-green-600 hover:bg-green-50"
-            >
-              <Package className="mr-2 h-4 w-4" />
-              Send Package
-            </Button>
-            <Button
-              size="sm"
-              onClick={onMoverClick}
-              className="bg-green-600 hover:bg-green-700"
-            >
-              <Users className="mr-2 h-4 w-4" />
-              Earn Money
             </Button>
           </div>
 
@@ -121,36 +99,12 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
                   Sign In
                 </Button>
                 <Button
-                  variant="outline"
                   size="sm"
-                  className="border-green-600 text-green-600 hover:bg-green-50"
+                  className="bg-green-600 hover:bg-green-700"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <UserPlus className="mr-2 h-4 w-4" />
                   Sign Up
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => {
-                    onSenderClick?.();
-                    setIsMenuOpen(false);
-                  }}
-                  className="border-green-600 text-green-600 hover:bg-green-50"
-                >
-                  <Package className="mr-2 h-4 w-4" />
-                  Send Package
-                </Button>
-                <Button
-                  size="sm"
-                  onClick={() => {
-                    onMoverClick?.();
-                    setIsMenuOpen(false);
-                  }}
-                  className="bg-green-600 hover:bg-green-700"
-                >
-                  <Users className="mr-2 h-4 w-4" />
-                  Earn Money
                 </Button>
               </div>
             </div>
