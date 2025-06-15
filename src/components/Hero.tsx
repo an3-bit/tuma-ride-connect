@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -107,108 +106,111 @@ export const Hero = () => {
   };
 
   return (
-    <section className="bg-white">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
-              Monetize your Movement with TumaRide
-            </h1>
-            <p className="text-lg text-gray-600 mb-8">
-              Whenever you're heading somewhere on public transport, earn money
-              by helping others move things effortlessly.
-            </p>
-            <div className="space-y-4">
-              <Dialog
-                open={locationDialogOpen}
-                onOpenChange={setLocationDialogOpen}
-              >
-                <DialogTrigger asChild>
-                  <div className="relative">
-                    <Send className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                    <Input
-                      type="text"
-                      placeholder="Where are you going?"
-                      className="pl-10 h-12 bg-gray-50 border-gray-200 cursor-pointer"
-                      value={destination}
-                      readOnly
-                    />
-                  </div>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px]">
-                  <DialogHeader>
-                    <DialogTitle>Set your destination</DialogTitle>
-                  </DialogHeader>
-                  <LocationInput onLocationSelect={handleLocationSelect} />
-                </DialogContent>
-              </Dialog>
-              <div className="grid grid-cols-2 gap-4">
+    <section
+      className="relative bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url('/lovable-uploads/ea745938-e1f0-4a2e-8dd6-cf27b49dbba3.png')",
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="relative container mx-auto px-4 py-24 md:py-32 flex flex-col items-center justify-center text-center min-h-[70vh] text-white">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+          Monetize your Movement with TumaRide
+        </h1>
+        <p className="text-lg text-gray-200 mb-8 max-w-3xl">
+          Whenever you're heading somewhere on public transport, earn money
+          by helping others move things effortlessly.
+        </p>
+
+        <div className="w-full max-w-2xl bg-white/20 backdrop-blur-md p-6 rounded-lg border border-white/30">
+          <div className="space-y-4 text-left">
+            <Dialog
+              open={locationDialogOpen}
+              onOpenChange={setLocationDialogOpen}
+            >
+              <DialogTrigger asChild>
                 <div className="relative">
-                  <CalendarDays className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 z-10" />
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant={"outline"}
-                        className={cn(
-                          "pl-10 h-12 w-full justify-start text-left font-normal bg-gray-50 border-gray-200 hover:bg-gray-100 text-gray-900",
-                          !date && "text-muted-foreground"
-                        )}
-                      >
-                        {date ? format(date, "PPP") : <span>Pick a date</span>}
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0">
-                      <Calendar
-                        mode="single"
-                        selected={date}
-                        onSelect={setDate}
-                        initialFocus
-                        className="pointer-events-auto"
-                      />
-                    </PopoverContent>
-                  </Popover>
-                </div>
-                <div className="relative">
-                  <Clock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <Send className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
                   <Input
                     type="text"
-                    placeholder="Now"
-                    className="pl-10 h-12 bg-gray-50 border-gray-200"
-                    defaultValue="Now"
+                    placeholder="Where are you going?"
+                    className="pl-10 h-12 bg-gray-50 border-gray-200 cursor-pointer text-gray-900"
+                    value={destination}
+                    readOnly
                   />
                 </div>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle className="text-gray-900">
+                    Set your destination
+                  </DialogTitle>
+                </DialogHeader>
+                <LocationInput onLocationSelect={handleLocationSelect} />
+              </DialogContent>
+            </Dialog>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="relative">
+                <CalendarDays className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 z-10" />
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant={"outline"}
+                      className={cn(
+                        "pl-10 h-12 w-full justify-start text-left font-normal bg-gray-50 border-gray-200 hover:bg-gray-100 text-gray-900",
+                        !date && "text-muted-foreground"
+                      )}
+                    >
+                      {date ? format(date, "PPP") : <span>Pick a date</span>}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0">
+                    <Calendar
+                      mode="single"
+                      selected={date}
+                      onSelect={setDate}
+                      initialFocus
+                      className="pointer-events-auto"
+                    />
+                  </PopoverContent>
+                </Popover>
               </div>
-              <Dialog
-                open={waitlistDialogOpen}
-                onOpenChange={setWaitlistDialogOpen}
-              >
-                <DialogTrigger asChild>
-                  <Button
-                    size="lg"
-                    className="w-full bg-gray-900 hover:bg-gray-800 text-white h-12 font-semibold"
-                  >
-                    Join our waitlist
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px]">
-                  <DialogHeader>
-                    <DialogTitle>Join the Waitlist</DialogTitle>
-                    <DialogDescription>
-                      Be the first to know when TumaRide launches. We'll send you
-                      an email once we're live.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <WaitlistForm setOpen={setWaitlistDialogOpen} />
-                </DialogContent>
-              </Dialog>
+              <div className="relative">
+                <Clock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <Input
+                  type="text"
+                  placeholder="Now"
+                  className="pl-10 h-12 bg-gray-50 border-gray-200 text-gray-900"
+                  defaultValue="Now"
+                />
+              </div>
             </div>
-          </div>
-          <div>
-            <img
-              src="/lovable-uploads/ea745938-e1f0-4a2e-8dd6-cf27b49dbba3.png"
-              alt="Person on a bus in traffic"
-              className="rounded-xl shadow-lg w-full h-full object-cover max-h-[500px]"
-            />
+            <Dialog
+              open={waitlistDialogOpen}
+              onOpenChange={setWaitlistDialogOpen}
+            >
+              <DialogTrigger asChild>
+                <Button
+                  size="lg"
+                  className="w-full bg-gray-900 hover:bg-gray-800 text-white h-12 font-semibold"
+                >
+                  Join our waitlist
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle className="text-gray-900">
+                    Join the Waitlist
+                  </DialogTitle>
+                  <DialogDescription className="text-gray-500">
+                    Be the first to know when TumaRide launches. We'll send you
+                    an email once we're live.
+                  </DialogDescription>
+                </DialogHeader>
+                <WaitlistForm setOpen={setWaitlistDialogOpen} />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>

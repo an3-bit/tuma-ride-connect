@@ -7,7 +7,6 @@ import { GallerySection } from "@/components/GallerySection";
 import { StatsSection } from "@/components/StatsSection";
 import { Testimonials } from "@/components/Testimonials";
 import { BlogSection } from "@/components/BlogSection";
-import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -20,7 +19,6 @@ const Index = () => {
       <StatsSection />
       <Testimonials />
       <BlogSection />
-      <Footer />
     </div>
   );
 };

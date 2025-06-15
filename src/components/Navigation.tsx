@@ -14,6 +14,7 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
   const location = useLocation();
 
   const navItems = [
+    { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
@@ -25,7 +26,7 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src="/lovable-uploads/c01aff81-5813-48c6-b678-1c3b4899efc2.png" alt="TumaRide Logo" className="h-8" />
+            <img src="/lovable-uploads/c01aff81-5813-48c6-b678-1c3b4899efc2.png" alt="TumaRide Logo" className="h-10" />
           </Link>
 
           {/* Desktop Navigation */}
