@@ -110,7 +110,7 @@ export const Hero = () => {
       className="relative bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('/lovable-uploads/ea745938-e1f0-4a2e-8dd6-cf27b49dbba3.png')",
+          "url('/lovable-uploads/c53bc5a9-471a-4502-9cdb-f5534845c084.png')",
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>

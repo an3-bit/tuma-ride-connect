@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, LogIn } from "lucide-react";
+import { Menu, X, LogIn, BusFront } from "lucide-react";
 
 interface NavigationProps {
   onSenderClick?: () => void;
@@ -26,7 +26,8 @@ export const Navigation = ({ onSenderClick, onMoverClick }: NavigationProps) => 
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src="/lovable-uploads/c01aff81-5813-48c6-b678-1c3b4899efc2.png" alt="TumaRide Logo" className="h-10" />
+            <BusFront className="h-8 w-8 text-green-600" />
+            <span className="text-2xl font-bold text-gray-800">TumaRide</span>
           </Link>
 
           {/* Desktop Navigation */}
