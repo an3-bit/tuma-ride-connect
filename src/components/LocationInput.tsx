@@ -18,7 +18,7 @@ export const LocationInput = ({ placeholder = "What's your address?", onLocation
         (position) => {
           const { latitude, longitude } = position.coords;
           // In a real app, you'd reverse geocode these coordinates
-          const mockAddress = `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
+          const mockAddress = `Current Location (${latitude.toFixed(2)}, ${longitude.toFixed(2)})`;
           setAddress(mockAddress);
           onLocationSelect?.(mockAddress);
         },
@@ -32,25 +32,35 @@ export const LocationInput = ({ placeholder = "What's your address?", onLocation
     }
   };
 
+  const handleSetLocation = () => {
+    if (address) {
+      onLocationSelect?.(address);
+    }
+  };
+
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 max-w-md w-full">
-      <div className="flex items-center gap-3">
-        <MapPin className="h-5 w-5 text-green-600" />
+    <div className="w-full space-y-4">
+      <div className="relative">
+        <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
         <Input
           type="text"
           placeholder={placeholder}
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          className="flex-1 border-0 focus:ring-0 text-gray-700"
+          className="pl-10 h-12 w-full bg-gray-50 border-gray-200"
         />
+      </div>
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
         <Button
           variant="ghost"
-          size="sm"
           onClick={handleUseCurrentLocation}
-          className="text-green-600 hover:text-green-700 hover:bg-green-50"
+          className="text-green-600 hover:text-green-700 hover:bg-green-50 w-full sm:w-auto"
         >
-          <Navigation className="h-4 w-4 mr-1" />
+          <Navigation className="h-4 w-4 mr-2" />
           Use current location
+        </Button>
+        <Button onClick={handleSetLocation} disabled={!address} className="w-full sm:w-auto bg-gray-900 hover:bg-gray-800">
+          Set Location
         </Button>
       </div>
     </div>
