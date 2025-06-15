@@ -17,19 +17,19 @@ export const Hero = ({ onSenderClick, onMoverClick, onTrackingClick }: HeroProps
     {
       image: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg',
       title: 'Send Packages Anywhere',
-      subtitle: 'Connect with travelers going your way',
+      subtitle: 'Kila Safari Ina Thamani',
       description: 'Send documents, gifts, or essentials across Kenya with trusted travelers'
     },
     {
       image: 'https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg',
       title: 'Earn While You Travel',
-      subtitle: 'Turn your journey into income',
+      subtitle: 'Kila Safari Ina Thamani',
       description: 'Make money by delivering packages along your regular routes'
     },
     {
       image: 'https://images.pexels.com/photos/1805053/pexels-photo-1805053.jpeg',
       title: 'Track in Real-Time',
-      subtitle: 'Know where your package is',
+      subtitle: 'Kila Safari Ina Thamani',
       description: 'Live tracking just like Uber - see your package location anytime'
     }
   ];
