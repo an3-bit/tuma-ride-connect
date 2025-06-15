@@ -14,7 +14,7 @@ export const SearchBoxSection = () => (
       </div>
     </div>
     <div className="flex-1">
-      <img src="https://images.pexels.com/photos/3951845/pexels-photo-3951845.jpeg" alt="search/logistics action" className="w-full h-56 object-cover rounded-xl shadow" />
+      <img src="action.jpg" alt="search/logistics action" className="w-full h-56 object-cover rounded-xl shadow" />
     </div>
   </section>
 );
