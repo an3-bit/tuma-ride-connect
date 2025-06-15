@@ -4,7 +4,7 @@ export const HowItWorks = () => (
     <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">How It Works</h2>
     <div className="grid md:grid-cols-4 gap-8">
       <div className="flex flex-col items-center">
-        <img src="https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg" alt="post delivery" className="h-24 w-24 rounded-full object-cover mb-4" />
+        <img src="post_delivery.png" alt="post delivery" className="h-24 w-24 rounded-full object-cover mb-4" />
         <span className="bg-green-600 text-white font-semibold rounded-full w-8 h-8 flex items-center justify-center mb-2">1</span>
         <div className="text-center text-sm font-medium">Post Delivery <br />Request</div>
       </div>
@@ -14,12 +14,12 @@ export const HowItWorks = () => (
         <div className="text-center text-sm font-medium">Get Matched<br />with Movers</div>
       </div>
       <div className="flex flex-col items-center">
-        <img src="https://images.pexels.com/photos/616966/pexels-photo-616966.jpeg" alt="track" className="h-24 w-24 rounded-full object-cover mb-4" />
+        <img src="delivery_track.jpg" alt="track" className="h-24 w-24 rounded-full object-cover mb-4" />
         <span className="bg-green-600 text-white font-semibold rounded-full w-8 h-8 flex items-center justify-center mb-2">3</span>
         <div className="text-center text-sm font-medium">Track<br />Delivery</div>
       </div>
       <div className="flex flex-col items-center">
-        <img src="https://images.pexels.com/photos/1707828/pexels-photo-1707828.jpeg" alt="get paid" className="h-24 w-24 rounded-full object-cover mb-4" />
+        <img src="mpesa.png" alt="get paid" className="h-24 w-24 rounded-full object-cover mb-4" />
         <span className="bg-green-600 text-white font-semibold rounded-full w-8 h-8 flex items-center justify-center mb-2">4</span>
         <div className="text-center text-sm font-medium">Get Paid<br />Securely</div>
       </div>

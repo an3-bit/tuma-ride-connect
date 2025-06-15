@@ -4,7 +4,7 @@ export const BlogSection = () => (
     <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Latest Blog & News</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div className="bg-white rounded-xl overflow-hidden shadow">
-        <img src="https://images.pexels.com/photos/616966/pexels-photo-616966.jpeg" alt="blog1" className="h-40 w-full object-cover" />
+        <img src="hero1.jpg" alt="blog1" className="h-40 w-full object-cover" />
         <div className="p-4">
           <h3 className="font-semibold">Kenya's supply chain: Opportunities in 2025</h3>
           <span className="block text-xs text-gray-500 mb-2">June 2025</span>
@@ -12,7 +12,7 @@ export const BlogSection = () => (
         </div>
       </div>
       <div className="bg-white rounded-xl overflow-hidden shadow">
-        <img src="https://images.pexels.com/photos/3951845/pexels-photo-3951845.jpeg" alt="blog2" className="h-40 w-full object-cover" />
+        <img src="work3.jpg" alt="blog2" className="h-40 w-full object-cover" />
         <div className="p-4">
           <h3 className="font-semibold">Mover Spotlight: Michael</h3>
           <span className="block text-xs text-gray-500 mb-2">May 2025</span>
@@ -20,7 +20,7 @@ export const BlogSection = () => (
         </div>
       </div>
       <div className="bg-white rounded-xl overflow-hidden shadow">
-        <img src="https://images.pexels.com/photos/184634/pexels-photo-184634.jpeg" alt="blog3" className="h-40 w-full object-cover" />
+        <img src="work4.jpg" alt="blog3" className="h-40 w-full object-cover" />
         <div className="p-4">
           <h3 className="font-semibold">Tracking Innovation</h3>
           <span className="block text-xs text-gray-500 mb-2">April 2025</span>
